@@ -1,0 +1,42 @@
+.budget {
+  margin-left: 100px !important;
+  padding: 50px;
+  border: 2px solid black;
+  max-height: 150px;
+}
+.expense {
+  border: 1px solid black;
+  padding: 7px;
+}
+@media only screen and (max-width: 520px) {
+  #bigScreen {
+    display: none;
+  }
+  .tracking-type {
+    font-size: small;
+  }
+  h1 {
+    font-size: medium;
+  }
+  #smallScreen {
+    margin-left: 0 !important;
+    padding: 30px 10px;
+  }
+  #smallScreen h2 {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 520px) {
+  #smallScreen {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-primary {
+    margin-top: 15px;
+  }
+}

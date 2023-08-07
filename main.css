@@ -1,0 +1,123 @@
+header {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px 0 0;
+  align-items: center;
+  /* border-bottom: 2px solid black; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin-bottom: 30px;
+}
+.mainText {
+  text-align: center;
+}
+ul {
+  display: flex;
+  gap: 10px;
+}
+li {
+  list-style: none;
+  font-size: large;
+  font-weight: 700;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: rgba(69, 154, 69, 0.662);
+  text-decoration: underline;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.logo span {
+  font-size: large;
+  font-weight: 700;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.gallery {
+  padding: 100px;
+  width: 100%;
+  justify-content: center;
+}
+.card-img-top {
+  width: 100%;
+  height: 200px;
+}
+.gallery-card {
+  width: 300px;
+  height: 400px;
+}
+
+.projectDescription {
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 100px;
+}
+.projectDescription p {
+  text-align: center;
+}
+.projectLinks {
+  display: flex;
+  gap: 15px;
+}
+.projectLinks a {
+  border-radius: 30px;
+  background-color: rgba(68, 195, 68, 0.772);
+  padding: 10px;
+  min-width: 120px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+.projetTechnology img {
+  width: 80px;
+  height: 80px;
+}
+
+.projetTechnology {
+  animation: projectTechnology 1s ease-in-out 3;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.projectPic {
+  display: flex;
+  justify-content: center;
+}
+.projectPic img {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  width: 50%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+@keyframes projectTechnology {
+  from {
+    transform: scale(0.8); /* Start with 0 scale (invisible) */
+  }
+  to {
+    transform: scale(1); /* Grow to normal size (scale 1) */
+  }
+}

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5.3%;
+  margin-inline: auto;
+}
+
+.cell {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  background-color: lightskyblue;
+}
+h1 {
+  text-align: center;
+}
+body {
+  background-color: lightseagreen;
+}
+.message {
+  text-align: center;
+}
+.restart {
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  border-radius: 200px;
+  background-color: aqua;
+}
+.winningCells{
+  background-color: rgba(40, 169, 212, 0.404);
+}
