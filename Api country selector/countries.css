@@ -1,0 +1,12 @@
+@media only screen and (max-width: 600px) {
+  #country-information {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .fontMobile {
+    font-size: small;
+    text-align: end;
+  }
+}

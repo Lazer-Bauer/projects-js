@@ -1,5 +1,10 @@
 header {
-  margin-top: 20px;
+  z-index: 2;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: aliceblue;
   margin-bottom: 60px;
   display: flex;
   justify-content: space-around;
@@ -10,25 +15,30 @@ header {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   margin-bottom: 30px;
 }
-.mainText {
-  text-align: center;
+header a:hover {
+  color: lightgray;
+  text-decoration: wavy;
+  cursor: pointer;
 }
-ul {
+header a:focus {
+  color: rgba(119, 171, 68, 0.646);
+  text-decoration: underline;
+}
+.navigator {
   display: flex;
   gap: 10px;
 }
-li {
+.navigator li {
   list-style: none;
   font-size: large;
   font-weight: 700;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-a {
+header a {
   color: black;
   text-decoration: none;
 }
-a:hover {
+header a:hover {
   color: rgba(69, 154, 69, 0.662);
   text-decoration: underline;
 }
@@ -48,11 +58,94 @@ a:hover {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+.dropdown {
+  display: none;
+}
+/* Home page */
+.home {
+  margin-top: 100px;
+  border-bottom: 1px solid #ccc;
+}
+.home .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.title {
+  height: 60vh;
+  background: linear-gradient(to right, rgb(3, 229, 229), rgb(10, 201, 137));
+}
+.title h1,
+p {
+  max-width: 500px;
+}
+.home img {
+  width: 60px;
+  height: 60px;
+  animation: projectTechnology 1s ease-in-out 3;
+}
+.home .used-Technology {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+/* About page  */
+.about {
+  padding-top: 103px;
+  border-bottom: 1px solid #ccc;
+  min-height: 100vh;
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.about img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.about p {
+  text-align: center;
+}
+.about a {
+  color: black;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 40px;
+  text-decoration: none;
+  background: linear-gradient(to right, rgb(3, 229, 229), rgb(10, 201, 137));
+  margin-bottom: 20px;
+}
+
+/* main page */
+.gallery-page {
+  padding-top: 103px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainText {
+  text-align: center;
+}
 
 .gallery {
-  padding: 100px;
+  display: flex;
+  padding: 50px 100px;
   width: 100%;
+  max-width: 1300px;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
 }
 .card-img-top {
   width: 100%;
@@ -70,6 +163,9 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding: 120px 100px;
+}
+.projetPage {
+  margin-top: 100px;
 }
 .projectDescription p {
   text-align: center;
@@ -119,5 +215,75 @@ a:hover {
   }
   to {
     transform: scale(1); /* Grow to normal size (scale 1) */
+  }
+}
+.contact form {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+}
+.contact {
+  padding-top: 103px !important;
+  padding: 70px 0;
+  background-color: lightskyblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-group label {
+  width: 100%;
+  text-align: center;
+}
+.contact .submit {
+  align-self: center;
+  max-width: 200px;
+  margin: 30px 0;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 40px;
+  background-color: aliceblue;
+}
+.contact a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact a:hover {
+  color: rgba(196, 165, 165, 0.715);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 830px) {
+  .dropdown {
+    display: block;
+  }
+  .navigator {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .projectLinks {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projectLinks a {
+    width: 100%;
+    max-width: 350px;
+  }
+  .projectDescription {
+    padding: 120px 30px;
+  }
+  .projetTechnology img {
+    width: 50px;
+    height: 50px;
+  }
+  .projectPic img {
+    width: 90%;
   }
 }

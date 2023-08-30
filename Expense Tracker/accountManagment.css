@@ -12,6 +12,10 @@
   #bigScreen {
     display: none;
   }
+  .app-container {
+    width: 100% !important;
+  }
+
   .tracking-type {
     font-size: small;
   }
@@ -38,5 +42,10 @@
   }
   .btn-primary {
     margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .expense span {
+    font-size: small;
   }
 }

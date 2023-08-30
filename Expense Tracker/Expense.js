@@ -15,7 +15,7 @@ export class Expense {
     this.date = new Date().toDateString();
   }
   AddExpense() {
-    let currentBudget = +$budget.innerText.slice(0, -1);
+    let currentBudget = +$budget[0].innerText.slice(0, -1);
 
     if (this.type === "Expenses") {
       if (this.amount > currentBudget) {
@@ -26,7 +26,7 @@ export class Expense {
     } else {
       currentBudget += this.amount;
     }
-    $budget.innerHTML = currentBudget + "$";
+    $budget.forEach((element) => (element.innerHTML = currentBudget + "$"));
     globalID++;
     allExpenses.push(this);
     this.renderExpense();

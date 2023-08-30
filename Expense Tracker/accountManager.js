@@ -7,7 +7,7 @@ export const $expensesList = document.querySelector(".expensesList");
 const $formSelect = document.querySelector(".form-select");
 const $trackingType = document.querySelector(".tracking-type");
 const $selectError = document.querySelector(".select-error");
-export const $budget = document.querySelector(".budget-highlight");
+export const $budget = document.querySelectorAll(".budget-highlight");
 console.log($formSelect);
 console.log($submitBtn);
 console.log($description);

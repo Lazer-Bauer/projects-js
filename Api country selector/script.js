@@ -58,126 +58,62 @@ const onchange = async () => {
   <li class="list-group-item d-flex">
     <i class="me-2 bi bi-clock"></i>
     <span class="fw-bold">Timezone: </span>
-    <span class="flex-fill text-center">${countryInfo.timezones.join(
-      ","
+    <span class="flex-fill text-center fontMobile">${countryInfo.timezones.join(
+      ", "
     )}</span>
   </li>
   <li class="list-group-item d-flex">
     <i class="me-2 bi bi-people-fill"></i>
     <span class="fw-bold">Population: </span>
-    <span class="flex-fill text-center">${new Intl.NumberFormat().format(
+    <span class="flex-fill text-center fontMobile">${new Intl.NumberFormat().format(
       countryInfo.population
     )}</span>
   </li>
   <li class="list-group-item d-flex">
     <i class="me-2 bi bi-building"></i>
     <span class="fw-bold">Capital: </span>
-    <span class="flex-fill text-center">${countryInfo.capital}</span>
+    <span class="flex-fill text-center fontMobile">${
+      countryInfo.capital?.join(", ") ?? "No Capital"
+    }</span>
   </li>
   <li class="list-group-item d-flex">
     <i class="me-2 bi bi-geo-fill"></i>
     <span class="fw-bold">Area: </span>
-    <span class="flex-fill text-center">
+    <span class="flex-fill text-center fontMobile">
       ${new Intl.NumberFormat().format(countryInfo.area)} m<sup>2</sup>
     </span>
   </li>
   <li class="list-group-item d-flex">
     <i class="me-2 bi bi-translate"></i>
     <span class="fw-bold">Languages: </span>
-    <span class="flex-fill text-center">${Object.values(
+    <span class="flex-fill text-center fontMobile">${
       countryInfo.languages
-    ).toString(",")}
-    </span>
+        ? Object.values(countryInfo.languages).join(", ")
+        : "No official languages"
+    }</span>
   </li>
   <li class="list-group-item d-flex">
     <i class="me-2 bi bi-cash-coin"></i>
     <span class="fw-bold">Currencies: </span>
-    <span class="flex-fill text-center">
-   ${Object.values(countryInfo.currencies).map(
-     (idx) => idx.name + " " + idx.symbol
-   )}
+    <span class="flex-fill text-center fontMobile">
+   ${
+     countryInfo.currencies
+       ? Object.values(countryInfo.currencies)
+           .map((idx) => idx.name + " " + idx.symbol)
+           .join(", ")
+       : "No official currency"
+   }
     </span>
   </li>
 </ul>
 </div>`;
 };
-
 $countrySelector.addEventListener("change", onchange);
-// async function countriesSelectorUpdated(countryName) {
-//   const countryInformation = await getCountryByName(countryName);
-//   $countrySelector.innerHTML = renderCountry(countryInformation);
-// }
 
-// // fetch(`${API_BASE}/all`)
-// //   .then((resp) => resp.json())
-// //   .then((countries) => {
-// //     return countries.map((country) => country.currencies);
-// //   })
-// //   .then(console.log);
+//  check if countries dosent have area currencies
 
-// function renderCountry({
-//   name: { common: commonName },
-//   flags: { svg: flagSvg, alt: flagAlt },
-//   timezones,
-//   population,
-//   capital,
-//   area,
-//   languages,
-//   currencies,
-// }) {
-//   return `
-//   <div class="card w-100">
-//     <img
-//       src="${flagSvg}"
-//       class="card-img-top"
-//       alt="${flagAlt ? flagAlt : `${commonName} flag`}"
-//     />
-
-//     <ul class="list-group list-group-flush">
-//       <li class="list-group-item d-flex">
-//         <i class="me-2 bi bi-clock"></i>
-//         <span class="fw-bold">Timezone: </span>
-//         <span class="flex-fill text-center">${timezones.join(", ")}</span>
-//       </li>
-//       <li class="list-group-item d-flex">
-//         <i class="me-2 bi bi-people-fill"></i>
-//         <span class="fw-bold">Population: </span>
-//         <span class="flex-fill text-center">${population.toLocaleString()}</span>
-//       </li>
-//       <li class="list-group-item d-flex">
-//         <i class="me-2 bi bi-building"></i>
-//         <span class="fw-bold">Capital: </span>
-//         <span class="flex-fill text-center">${
-//           capital ? capital.join(", ") : "Unknown"
-//         }</span>
-//       </li>
-//       <li class="list-group-item d-flex">
-//         <i class="me-2 bi bi-geo-fill"></i>
-//         <span class="fw-bold">Area: </span>
-//         <span class="flex-fill text-center">
-//           ${area.toLocaleString()} m<sup>2</sup>
-//         </span>
-//       </li>
-//       <li class="list-group-item d-flex">
-//         <i class="me-2 bi bi-translate"></i>
-//         <span class="fw-bold">Languages: </span>
-//         <span class="flex-fill text-center">${
-//           languages ? Object.values(languages).join(", ") : "Unknown"
-//         }</span>
-//       </li>
-//       <li class="list-group-item d-flex">
-//         <i class="me-2 bi bi-cash-coin"></i>
-//         <span class="fw-bold">Currencies: </span>
-//         <span class="flex-fill text-center">
-//         ${
-//           currencies
-//             ? Object.values(currencies)
-//                 .map(({ name, symbol }) => `${name} (${symbol})`)
-//                 .join(", ")
-//             : "Unknown"
-//         }
-//         </span>
-//       </li>
-//     </ul>
-//   </div>`;
-// }
+// fetch("https://restcountries.com/v3.1/all")
+//   .then((r) => r.json())
+//   .then((d) => {
+//     console.log(d.filter(c=>!c.area || !c.currencies))
+//   });

@@ -1,5 +1,12 @@
 const $gameBoard = document.querySelector("#gameBoard");
-
+let unitSize = 25;
+const screenWidth = window.innerWidth;
+console.log(screenWidth);
+if (screenWidth < 520) {
+  $gameBoard.width = 320;
+  $gameBoard.height = 320;
+  unitSize = 16;
+}
 const ctx = $gameBoard.getContext("2d");
 const $scoreText = document.querySelector("#scoreText");
 const $resetBtn = document.querySelector("#resetBtn");
@@ -14,7 +21,7 @@ const boardBackground = "white";
 const snakeColor = "lightGreen";
 const snakeBorder = "black";
 const foodColor = "red";
-const unitSize = 25;
+
 let running = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
